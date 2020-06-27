@@ -1,0 +1,23 @@
+import React, { useEffect } from "react"
+import Links from "../constants/nav-links"
+import SocialLinks from "../constants/social-links"
+import { FaTimes } from "react-icons/fa"
+
+import $ from 'jquery';
+
+const Sidebar = ({ isOpen, toggleSidebar }) => {
+
+    return (
+        <aside className={`sidebar ${isOpen ? "show-sidebar" : ""} `}>
+            <button className="close-btn" onClick={toggleSidebar}>
+                <FaTimes />
+            </button>
+            <div className="side-container">
+                <Links hideSidebar={toggleSidebar} styleClass={`${isOpen ? "sidebar-links" : ""}`} />
+                <SocialLinks styleClass={`${isOpen ? "sidebar-icons" : ""}`} />
+            </div>
+        </aside>
+    )
+}
+
+export default Sidebar
