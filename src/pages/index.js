@@ -1,6 +1,6 @@
 import React from "react"
 
-import LayoutComponent from "../components/LayoutComponent"
+import Layout from "../components/Layout"
 import StyledHeroSection from "../components/Hero"
 import About from "../components/About"
 import Projects from "../components/Projects"
@@ -9,12 +9,12 @@ import Contact from "../components/Contact"
 
 
 const IndexPage = () => (
-    <LayoutComponent>
+    <Layout>
         <StyledHeroSection />
         <About />
         <Projects />
         <Contact />
-    </LayoutComponent>
+    </Layout>
 )
 
 export default IndexPage
