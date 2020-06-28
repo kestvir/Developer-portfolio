@@ -4,7 +4,7 @@ import Sidebar from "./Sidebar"
 import Footer from "./Footer"
 
 
-const Layout = ({ children, backgroundColor }) => {
+const LayoutComponent = ({ children, backgroundColor }) => {
     const [isOpen, setIsOpen] = useState(false)
     const toggleSidebar = () => {
         setIsOpen(!isOpen)
@@ -20,4 +20,4 @@ const Layout = ({ children, backgroundColor }) => {
     )
 }
 
-export default Layout
+export default LayoutComponent
