@@ -1,17 +1,13 @@
 import React from 'react';
 import Title from './Title'
 
-require("dotenv").config({
-    path: `../../.env.${process.env.NODE_ENV}`,
-})
-
 const Contact = () => {
     return (
         <section className="contact-page" id="contact-section">
             <Title title={"Contact"} />
             <article className="contact-form">
                 <h3>get in touch</h3>
-                <form action={`https://formspree.io/${process.env.FORMSPREE_TOKEN}`} method="POST">
+                <form action={`https://formspree.io/mknqvbve`} method="POST">
                     <div className="form-group">
                         <input
                             type="text"
