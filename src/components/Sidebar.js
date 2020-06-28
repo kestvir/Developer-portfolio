@@ -1,9 +1,7 @@
-import React, { useEffect } from "react"
+import React from "react"
 import Links from "../constants/nav-links"
 import SocialLinks from "../constants/social-links"
 import { FaTimes } from "react-icons/fa"
-
-import $ from 'jquery';
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
 
