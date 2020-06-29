@@ -41,9 +41,9 @@ const About = () => {
                     <p>
                         {aboutMeText}
                     </p>
-                    <div className="about-stack">
+                    {/* <div className="about-stack">
                         <Stack />
-                    </div>
+                    </div> */}
                 </article>
             </div>
         </section>
