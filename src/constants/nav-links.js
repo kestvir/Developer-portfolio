@@ -33,6 +33,7 @@ export default ({ styleClass, hideSidebar }) => {
                         <Link
                             onClick={hideSidebar}
                             to={link.url}
+                            offset={-95}
                             activeClass="active"
                             spy={true}
                             smooth={true}
