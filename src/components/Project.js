@@ -18,7 +18,7 @@ const Project = ({ source, live, image, title, Stack_tab }) => {
             <article>
                 <Image fluid={image.childImageSharp.fluid} className="project-img" />
                 <div className="project-card">
-                    <Link to={`${live}`} className="project-external-link-icon">
+                    <Link to={`${live}`} target="_blank" className="project-external-link-icon">
                         <FaExternalLinkAlt />
                     </Link>
                     <h4 className="project-card-title">{title}</h4>
