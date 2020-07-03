@@ -822,7 +822,7 @@ Footer
     place-items: center;
 }
 
-.footer h4 {
+.footer h4, .footer h5 {
     margin-top: 0.5rem;
     color: var(--clr-white);
     font-weight: normal;
@@ -830,7 +830,7 @@ Footer
     letter-spacing: 0.2rem;
 }
 
-.footer h4 span, .footer h3 a {
+.footer h4 span, .footer h5 a {
     color: var(--clr-primary-light);
 }
 
