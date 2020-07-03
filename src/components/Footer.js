@@ -14,7 +14,7 @@ const Footer = () => {
                 </h4>
                 <h5>
                     Website source
-                    <Link to="https://github.com/kestvir/Developer-portfolio" target="_blank" rel="noreferrer">code</Link>
+                    <Link to="https://github.com/kestvir/Developer-portfolio" target="_blank" rel="noreferrer"> code</Link>
                 </h5>
             </div>
         </footer>
