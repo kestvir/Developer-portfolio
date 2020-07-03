@@ -830,7 +830,7 @@ Footer
     letter-spacing: 0.2rem;
 }
 
-.footer h4 span {
+.footer h4 span, .footer h3 a {
     color: var(--clr-primary-light);
 }
 
