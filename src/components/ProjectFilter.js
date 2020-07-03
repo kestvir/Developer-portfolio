@@ -87,7 +87,6 @@ const ProjectFilter = () => {
                 <option value="all">ALL</option>
                 <option value="javascript">JAVASCRIPT</option>
                 <option value="react">REACT</option>
-                <option value="python">PYTHON</option>
                 <option value="django">DJANGO</option>
             </select>
         </div>
