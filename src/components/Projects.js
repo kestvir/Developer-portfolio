@@ -6,7 +6,7 @@ import ProjectFilter from "./ProjectFilter"
 
 const query = graphql`
   {
-    allStrapiProjects(orderBy: { createdAt: asc } ) {
+    allStrapiProjects(sort: {fields: id, order: ASC}) {
       nodes {
         id
         live
