@@ -36,7 +36,7 @@ const Projects = () => {
     console.log(projects)
 
     return (
-        <section className="section projects-section" id="projects-section">
+        <section className="section projects" id="projects-section">
             <Title title={"Projects"} />
             <ProjectFilter />
             <div className="section-center projects-center">

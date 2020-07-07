@@ -3,7 +3,7 @@ import Title from './Title'
 
 const Contact = () => {
     return (
-        <section className="contact-page" id="contact-section">
+        <section className="section contact" id="contact-section">
             <Title title={"Contact"} />
             <article className="contact-form">
                 <h3>get in touch</h3>

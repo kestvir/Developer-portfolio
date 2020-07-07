@@ -234,10 +234,6 @@ About Page
 ===============
 */
 
-.about-page {
-    padding: 7rem 0;
-}
-
 .about-img {
     width: 15rem;
     border-radius: 50%;
@@ -465,7 +461,7 @@ Projects
 ===============
 */
 
-.projects-section {
+.projects {
     background-color: var(--clr-light-grey);
 }
 
@@ -730,13 +726,13 @@ Contact
 ===============
 */
 
-.contact-page {
+.contact {
     display: grid;
     place-items: center;
-    padding: 5rem 0;
+    0;
 }
 
-.contact-page .section-title {
+.contact .section-title {
     margin-bottom: 4rem;
 }
 

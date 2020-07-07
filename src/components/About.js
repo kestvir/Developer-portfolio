@@ -33,7 +33,7 @@ const About = () => {
     const aboutMeText = info[0].info
 
     return (
-        <section className="about-page" id="about-section">
+        <section className="section about-page" id="about-section">
             <Title title={"About Me"} />
             <div className="section-center about-center">
                 <Image fluid={fluid} className="about-img" />
