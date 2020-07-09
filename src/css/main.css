@@ -729,7 +729,6 @@ Contact
 .contact {
     display: grid;
     place-items: center;
-    0;
 }
 
 .contact .section-title {
@@ -871,7 +870,7 @@ Error page
     text-transform: uppercase;
     background: var(--clr-primary);
     color: var(--clr-primary-light);
-    padding: .375rem .75rem;
+    padding: 1rem 2rem;
     letter-spacing: 0.2rem;
     display: inline-block;
     font-weight: 700;
