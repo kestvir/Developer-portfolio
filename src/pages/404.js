@@ -5,17 +5,14 @@ import Footer from "../components/Footer"
 const NotFoundPage = () => {
 
     return (
-        <>
-            <main className="error-page">
-                <div className="error-container">
-                    <h1>oops it's a dead end</h1>
-                    <Link to="/" className="btn-to-home">
-                        back home
+        <div className="error-page">
+            <div>
+                <h1>Page Not Found</h1>
+                <Link to="/" className="btn btn-to-home">
+                    back home
                 </Link>
-                </div>
-            </main>
-            <Footer />
-        </>
+            </div>
+        </div>
     )
 }
 

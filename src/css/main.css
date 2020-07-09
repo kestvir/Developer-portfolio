@@ -858,7 +858,7 @@ Error page
     place-items: center;
     background: var(--clr-light-grey);
     text-align: center;
-    min-height: calc(100vh - 5rem - 9rem);
+    min-height: 100vh;
 }
 
 .error-page h1 {

@@ -33,8 +33,6 @@ const Projects = () => {
         allStrapiProjects: { nodes: projects }
     } = useStaticQuery(query)
 
-    console.log(projects)
-
     return (
         <section className="section projects" id="projects-section">
             <Title title={"Projects"} />
