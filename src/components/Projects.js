@@ -6,7 +6,7 @@ import ProjectFilter from "./ProjectFilter"
 
 const query = graphql`
   {
-    allStrapiProjects(sort: {fields: createdAt, order: ASC}) {
+    allStrapiProjects(sort: {fields: created_at, order: ASC}) {
       nodes {
         id
         live
@@ -32,6 +32,8 @@ const Projects = () => {
     const {
         allStrapiProjects: { nodes: projects }
     } = useStaticQuery(query)
+
+    console.log(projects)
 
     return (
         <section className="section projects" id="projects-section">
