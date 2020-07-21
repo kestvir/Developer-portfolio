@@ -848,10 +848,10 @@ Footer
 
 @media screen and (max-width: 450px) {
     .footer .social-link {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
     .footer h4 {
-        font-size: 2.5rem;
+        font-size: 1rem;
     }
 }
 
