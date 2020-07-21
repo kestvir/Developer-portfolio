@@ -847,6 +847,9 @@ Footer
 }
 
 @media screen and (max-width: 450px) {
+    .footer-links {
+        margin: 0 auto;
+    }
     .footer .social-link {
         font-size: 1.2rem;
     }
