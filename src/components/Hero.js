@@ -48,7 +48,7 @@ const Hero = ({ className }) => {
                 >
                     <div className="text-center">
                         <h2 className="hero-name">Hello, I'm Kestutis</h2>
-                        <h3 className="hero-description-position">Full Stack Developer</h3>
+                        <h3 className="hero-description-position">Designer and Full Stack Developer</h3>
                         <Link href="#"
                             className="hero-btn"
                             to="about-section"
