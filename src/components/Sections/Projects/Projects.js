@@ -1,12 +1,12 @@
 import React from "react"
-import Title from "./Title"
+import Title from "../../UI/Title"
 import { graphql, useStaticQuery } from "gatsby"
 import Project from "./Project"
 import ProjectFilter from "./ProjectFilter"
 
 const query = graphql`
   {
-    allStrapiProjects(sort: {fields: created_at, order: ASC}) {
+    allStrapiProjects(sort: { fields: created_at, order: ASC }) {
       nodes {
         id
         live
@@ -15,7 +15,7 @@ const query = graphql`
         image {
           childImageSharp {
             fluid {
-                ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid
             }
           }
         }
@@ -29,22 +29,21 @@ const query = graphql`
 `
 
 const Projects = () => {
-    const {
-        allStrapiProjects: { nodes: projects }
-    } = useStaticQuery(query)
+  const {
+    allStrapiProjects: { nodes: projects },
+  } = useStaticQuery(query)
 
-
-    return (
-        <section className="section projects" id="projects-section">
-            <Title title={"Projects"} />
-            <ProjectFilter />
-            <div className="section-center projects-center">
+  return (
+    <section className="section projects" id="projects-section">
+      <Title title={"Projects"} />
+      <ProjectFilter />
+      {/* <div className="section-center projects-center">
                 {projects.map(project => {
                     return <Project key={project.id} {...project} />
                 })}
-            </div>
-        </section>
-    )
+            </div> */}
+    </section>
+  )
 }
 
 export default Projects
