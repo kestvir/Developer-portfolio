@@ -6,7 +6,7 @@ import { FaCode, FaAlignRight } from "react-icons/fa"
 const Navbar = ({ toggleSidebar }) => {
   useEffect(() => {
     window.addEventListener("scroll", resizeHeaderOnScroll)
-  })
+  }, [])
 
   const resizeHeaderOnScroll = () => {
     const distanceY = window.pageYOffset || document.documentElement.scrollTop,
