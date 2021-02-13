@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import { Link, animateScroll as scroll } from "react-scroll"
+import { Link } from "react-scroll"
 import BackgroundImage from "gatsby-background-image"
 import styled from "styled-components"
 
@@ -34,7 +34,7 @@ const Hero = ({ className }) => {
   const imageData = fluid
 
   return (
-    <div className="section-center hero hero-center" id="hero-section">
+    <div className="hero hero-center" id="hero-section">
       <StyledBackground
         fluid={imageData}
         className={className}

@@ -35,13 +35,13 @@ const Projects = () => {
 
   return (
     <section className="section projects" id="projects-section">
-      <Title title={"Projects"} />
+      <Title title="Projects" />
       <ProjectFilter />
       {/* <div className="section-center projects-center">
-                {projects.map(project => {
-                    return <Project key={project.id} {...project} />
-                })}
-            </div> */}
+        {projects.map(project => (
+          <Project key={project.id} {...project} />
+        ))}
+      </div> */}
     </section>
   )
 }

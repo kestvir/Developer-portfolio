@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
-import PageLinks from "../constants/nav-links"
-import SocialLinks from "../constants/social-links"
+import PageLinks from "../../../constants/nav-links"
+import SocialLinks from "../../../constants/social-links"
 import { FaCode, FaAlignRight } from "react-icons/fa"
 
 const Navbar = ({ toggleSidebar }) => {

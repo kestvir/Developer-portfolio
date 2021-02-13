@@ -1,6 +1,6 @@
 import React from "react"
 import Image from "gatsby-image"
-import Title from "./UI/Title"
+import Title from "../UI/Title"
 import { graphql, useStaticQuery } from "gatsby"
 
 const query = graphql`

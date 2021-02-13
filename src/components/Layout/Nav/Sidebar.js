@@ -1,6 +1,6 @@
 import React from "react"
-import Links from "../constants/nav-links"
-import SocialLinks from "../constants/social-links"
+import Links from "../../../constants/nav-links"
+import SocialLinks from "../../../constants/social-links"
 import { FaTimes } from "react-icons/fa"
 
 const Sidebar = ({ isOpenSidebar, toggleSidebar }) => {
