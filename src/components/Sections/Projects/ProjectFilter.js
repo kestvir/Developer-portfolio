@@ -1,96 +1,102 @@
-import React, { useEffect } from 'react';
-import $ from 'jquery';
+import React, { useEffect, useState, useRef } from "react"
+import $ from "jquery"
 
-const ProjectFilter = () => {
-    useEffect(() => {
-        $(".my-custom-select").each(function () {
-            const classes = $(this).attr("class");
-            let template = '<div class="' + classes + '">';
-            template +=
-                '<span class="my-custom-select-trigger">' +
-                $(this).attr("placeholder") +
-                "</span>";
-            template += '<div class="my-custom-options">';
-            $(this)
-                .find("option")
-                .each(function () {
-                    template +=
-                        '<span class="my-custom-option' +
-                        '" data-value="' +
-                        $(this).attr("value") +
-                        '">' +
-                        $(this).html() +
-                        "</span>";
-                });
-            template += "</div></div>";
+const techStack = ["ALL", "JAVASCRIPT", "REACT", "DJANGO"]
 
-            $(this).wrap('<div class="my-custom-select-wrapper"></div>');
-            $(this).hide();
-            $(this).after(template);
-        });
-        $(".my-custom-option:first-of-type").hover(
-            function () {
-                $(this)
-                    .parents(".my-custom-options")
-                    .addClass("option-hover");
-            },
-            function () {
-                $(this)
-                    .parents(".my-custom-options")
-                    .removeClass("option-hover");
-            }
-        );
-        $(".my-custom-select-trigger").on("click", function (event) {
-            $("html").one("click", function () {
-                $(".my-custom-select").removeClass("opened");
-            });
-            $(this)
-                .parents(".my-custom-select")
-                .toggleClass("opened");
-            event.stopPropagation();
-        });
-        $(".my-custom-option").on("click", function () {
-            $(this)
-                .parents(".my-custom-select-wrapper")
-                .find("select")
-                .val($(this).data("value"));
-            $(this)
-                .parents(".my-custom-options")
-                .find(".my-custom-option")
-                .removeClass("selection");
-            $(this).addClass("selection");
-            $(this)
-                .parents(".my-custom-select")
-                .removeClass("opened");
-            $(this)
-                .parents(".my-custom-select")
-                .find(".my-custom-select-trigger")
-                .text($(this).text());
-        });
+const ProjectFilter = ({ onProjectTechChange, filterValue, forwardedRef }) => {
+  const [selectOpen, setSelectOpen] = useState(false)
 
-        // PROJECT FILTERING
-        $(".my-custom-options").click(function (e) {
-            $(".project").hide();
-            if ($(e.target).hasClass('selection')) {
-                if ($(e.target).attr("data-value") == "all") {
-                    $(".project").show();
-                } else {
-                    $("." + $(e.target).attr("data-value")).show()
-                }
-            }
-        });
-    }, []);
+  const projectFilterRef = useRef(null)
+  const customSelectRef = useRef(null)
+  const selectWrapperRef = useRef(null)
 
-    return (
-        <div className="project-filter">
-            <select className="my-custom-select sources" placeholder="ALL">
-                <option value="all">ALL</option>
-                <option value="javascript">JAVASCRIPT</option>
-                <option value="react">REACT</option>
-                <option value="django">DJANGO</option>
-            </select>
+  useEffect(() => {
+    const handleCheckSelectOpen = e => {
+      if (selectOpen) {
+        if (
+          e.target === customSelectRef.current ||
+          !customSelectRef.current.contains(e.target)
+        ) {
+          customSelectRef.current.classList.remove("opened")
+          setSelectOpen(false)
+        }
+      }
+    }
+    document.addEventListener("click", handleCheckSelectOpen, true)
+    return () => {
+      document.removeEventListener("click", handleCheckSelectOpen, true)
+    }
+  }, [selectOpen])
+
+  const handleOpenSelectChange = e => {
+    const isOpen = e.target.parentElement.classList.toggle("opened")
+    setSelectOpen(isOpen)
+  }
+
+  const handleSelectOptionPick = e => {
+    onProjectTechChange(e.target.textContent.toLowerCase())
+    e.target.parentElement.childNodes.forEach(child => {
+      child.classList.remove("selection")
+    })
+    e.target.classList.add("selection")
+    customSelectRef.current.classList.remove("opened")
+    setSelectOpen(false)
+  }
+
+  useEffect(() => {
+    $(".my-custom-option").on("click", function () {
+      $(this)
+        .parents(".my-custom-select-wrapper")
+        .find("select")
+        .val($(this).data("value"))
+    })
+  }, [])
+
+  return (
+    <div ref={projectFilterRef} className="project-filter">
+      <div className="my-custom-select-wrapper" ref={selectWrapperRef}>
+        <select
+          className="my-custom-select sources"
+          placeholder="ALL"
+          value={filterValue}
+          onChange={handleSelectOptionPick}
+          ref={forwardedRef}
+        >
+          {techStack.map(tech => {
+            return (
+              <option key={tech} value={tech.toLowerCase()}>
+                {tech}
+              </option>
+            )
+          })}
+        </select>
+        <div
+          className="my-custom-select sources"
+          onClick={handleOpenSelectChange}
+          ref={customSelectRef}
+        >
+          <span className="my-custom-select-trigger">
+            {filterValue.toUpperCase()}
+          </span>
+          <div className="my-custom-options">
+            {techStack.map(tech => {
+              return (
+                <span
+                  key={tech}
+                  className={`my-custom-option ${
+                    tech === "ALL" ? "selection" : "".trim()
+                  }`}
+                  onClick={handleSelectOptionPick}
+                >
+                  {tech}
+                </span>
+              )
+            })}
+          </div>
         </div>
-    )
+      </div>
+    </div>
+  )
 }
 
-export default ProjectFilter;
+export default ProjectFilter

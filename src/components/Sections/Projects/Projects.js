@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useRef } from "react"
 import Title from "../../UI/Title"
 import { graphql, useStaticQuery } from "gatsby"
 import Project from "./Project"
@@ -29,19 +29,32 @@ const query = graphql`
 `
 
 const Projects = () => {
+  const [filterValue, setFilterValue] = useState("ALL")
+
+  const selectTechRef = useRef(null)
+
   const {
     allStrapiProjects: { nodes: projects },
   } = useStaticQuery(query)
 
+  const checkProjectTech = techName => {
+    console.log(projects)
+  }
+
   return (
     <section className="section projects" id="projects-section">
       <Title title="Projects" />
-      <ProjectFilter />
-      {/* <div className="section-center projects-center">
-        {projects.map(project => (
-          <Project key={project.id} {...project} />
-        ))}
-      </div> */}
+      <ProjectFilter
+        onProjectTechChange={setFilterValue}
+        filterValue={filterValue}
+        forwardedRef={selectTechRef}
+      />
+      <div className="section-center projects-center">
+        {projects.map(project => {
+          checkProjectTech()
+          return <Project key={project.id} {...project} isVisible={true} />
+        })}
+      </div>
     </section>
   )
 }

@@ -688,10 +688,6 @@ select {
   box-shadow: 0px 10px 50px 0px rgba(43, 111, 246, 0.1);
 }
 
-.option-hover:before {
-  background: #f9f9f9;
-}
-
 .my-custom-option {
   position: relative;
   display: block;
