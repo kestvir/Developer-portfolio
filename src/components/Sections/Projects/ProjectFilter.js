@@ -43,15 +43,6 @@ const ProjectFilter = ({ onProjectTechChange, filterValue, forwardedRef }) => {
     setSelectOpen(false)
   }
 
-  useEffect(() => {
-    $(".my-custom-option").on("click", function () {
-      $(this)
-        .parents(".my-custom-select-wrapper")
-        .find("select")
-        .val($(this).data("value"))
-    })
-  }, [])
-
   return (
     <div ref={projectFilterRef} className="project-filter">
       <div className="my-custom-select-wrapper" ref={selectWrapperRef}>

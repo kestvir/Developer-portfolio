@@ -37,8 +37,14 @@ const Projects = () => {
     allStrapiProjects: { nodes: projects },
   } = useStaticQuery(query)
 
-  const checkProjectTech = techName => {
-    console.log(projects)
+  const checkProjectTech = project => {
+    const techFound = false
+    project.Stack_tab.forEach(tech => {
+      if (tech.name === filterValue) {
+        techFound = true
+      }
+    })
+    return techFound
   }
 
   return (
@@ -52,7 +58,13 @@ const Projects = () => {
       <div className="section-center projects-center">
         {projects.map(project => {
           checkProjectTech()
-          return <Project key={project.id} {...project} isVisible={true} />
+          return (
+            <Project
+              key={project.id}
+              {...project}
+              isVisible={checkProjectTech(project)}
+            />
+          )
         })}
       </div>
     </section>
