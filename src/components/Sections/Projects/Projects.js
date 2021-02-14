@@ -55,7 +55,7 @@ const Projects = () => {
         filterValue={filterValue}
         forwardedRef={selectTechRef}
       />
-      {/* <div className="section-center projects-center">
+      <div className="section-center projects-center">
         {projects.map(project => {
           checkProjectTech()
           return (
@@ -66,7 +66,7 @@ const Projects = () => {
             />
           )
         })}
-      </div> */}
+      </div>
     </section>
   )
 }
