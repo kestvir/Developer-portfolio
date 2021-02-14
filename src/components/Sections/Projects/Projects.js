@@ -29,7 +29,7 @@ const query = graphql`
 `
 
 const Projects = () => {
-  const [filterValue, setFilterValue] = useState("ALL")
+  const [filterValue, setFilterValue] = useState("all")
 
   const selectTechRef = useRef(null)
 
@@ -38,7 +38,11 @@ const Projects = () => {
   } = useStaticQuery(query)
 
   const checkProjectTech = project => {
-    const techFound = false
+    let techFound = false
+    if (filterValue === "all") {
+      techFound = true
+      return techFound
+    }
     project.Stack_tab.forEach(tech => {
       if (tech.name === filterValue) {
         techFound = true
@@ -57,7 +61,6 @@ const Projects = () => {
       />
       <div className="section-center projects-center">
         {projects.map(project => {
-          checkProjectTech()
           return (
             <Project
               key={project.id}
