@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react"
-import $ from "jquery"
 
 const techStack = ["ALL", "JAVASCRIPT", "REACT", "DJANGO"]
 

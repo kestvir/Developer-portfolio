@@ -4,10 +4,6 @@ import SocialLinks from "../../../constants/social-links"
 import { FaCode, FaAlignRight } from "react-icons/fa"
 
 const Navbar = ({ toggleSidebar }) => {
-  useEffect(() => {
-    window.addEventListener("scroll", resizeHeaderOnScroll)
-  }, [])
-
   const resizeHeaderOnScroll = () => {
     const distanceY = window.pageYOffset || document.documentElement.scrollTop,
       shrinkOn = 200,
@@ -19,6 +15,13 @@ const Navbar = ({ toggleSidebar }) => {
       headerEl.classList.remove("smaller-header-nav")
     }
   }
+  useEffect(() => {
+    resizeHeaderOnScroll()
+    window.addEventListener("scroll", resizeHeaderOnScroll)
+    return () => {
+      window.removeEventListener("scroll", resizeHeaderOnScroll)
+    }
+  }, [resizeHeaderOnScroll])
 
   return (
     <nav className="navbar" id="header-nav">
