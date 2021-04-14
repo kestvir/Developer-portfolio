@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react"
 
-const techStack = ["ALL", "JAVASCRIPT", "REACT", "DJANGO"]
+const techStack = ["FEATURED", "ALL", "JAVASCRIPT", "REACT", "DJANGO"]
 
 const ProjectFilter = ({ onProjectTechChange, filterValue, forwardedRef }) => {
   const [selectOpen, setSelectOpen] = useState(false)

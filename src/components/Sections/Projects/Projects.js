@@ -29,7 +29,7 @@ const query = graphql`
 `
 
 const Projects = () => {
-  const [filterValue, setFilterValue] = useState("all")
+  const [filterValue, setFilterValue] = useState("featured")
 
   const selectTechRef = useRef(null)
 
