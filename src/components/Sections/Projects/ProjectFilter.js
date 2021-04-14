@@ -47,7 +47,6 @@ const ProjectFilter = ({ onProjectTechChange, filterValue, forwardedRef }) => {
       <div className="my-custom-select-wrapper" ref={selectWrapperRef}>
         <select
           className="my-custom-select sources"
-          placeholder="ALL"
           value={filterValue}
           onChange={handleSelectOptionPick}
           ref={forwardedRef}
@@ -74,7 +73,7 @@ const ProjectFilter = ({ onProjectTechChange, filterValue, forwardedRef }) => {
                 <span
                   key={tech}
                   className={`my-custom-option ${
-                    tech === "ALL" ? "selection" : "".trim()
+                    tech === "FEATURED" ? "selection" : "".trim()
                   }`}
                   onClick={handleSelectOptionPick}
                 >
