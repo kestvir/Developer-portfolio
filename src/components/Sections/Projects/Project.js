@@ -31,6 +31,7 @@ const Project = ({ source, live, image, title, Stack_tab, isVisible }) => {
               <h4 className="project-card-title">{title}</h4>
               <div className="project-body">
                 {Stack_tab.map(stack => {
+                  if(stack.name === "featured") return;
                   return <p key={stack.id}>{stack.name}</p>
                 })}
               </div>
